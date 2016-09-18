@@ -1,0 +1,499 @@
+h1 {
+  font-size: 62pt !important;
+  font-family: 'Patrick Hand', cursive !important ;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+h2 {
+  font-size: 32pt !important;
+  font-family: 'Patrick Hand', cursive !important ;
+  text-align: center;
+}
+
+
+p {
+  font-size: 22pt;
+  font-family: 'Patrick Hand', cursive !important ;
+  text-align: justify;
+  line-height: 150%;
+}
+
+p.centered {
+  text-align: center;
+}
+
+p.greeting {
+  font-size: 32pt;
+  padding-bottom: 10%;
+}
+
+
+html , body {
+
+  background-image: url("../images/inflicted.png") ;
+  background-repeat: repeat;
+   /*
+    cursor: url("../images/movemouse.png"), pointer;
+    */
+}
+
+.text_no_1:hover , .text_no_2:hover , .text_no_3:hover , .text_no_4:hover , .text_no_5:hover {
+    text-shadow: 0 0 10px #858585; 
+
+}
+
+
+
+#top_menu {
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+  border-bottom: solid 1px #000;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+#top_menu_index {
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+  border-bottom: solid 1px #000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+#bottom_menu {
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+  border-top: solid 1px #000;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 100px;
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1000;
+}
+
+.top_menu_text {
+  line-height: 80px;
+  font-size: 22pt;
+}
+
+
+a {
+  color: #000 !important;
+}
+
+a:visited, a:link {
+  text-decoration: none !important;
+
+}
+
+a:hover, a:active {
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 720px) {
+  .top_menu_text {
+    text-align: center;
+    font-size: 18;
+  }
+
+  .top_menu_logo {
+    width: 20%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+  }
+}
+
+.teaser {
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  z-index: 1000 !important;
+  border: ridge 1px #000;
+
+  -webkit-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+}
+.teaser2 {
+  width: 495px;
+  height: 700px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  z-index: 1000 !important;
+  background-image: url("../images/crossword.png") !important;
+  -webkit-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  margin-right: auto !important;
+  margin-left: auto !important;
+  display: block !important;
+  
+}
+
+.relativepic {
+  position: absolute;
+  bottom: 43%;
+  left: 10%;
+  z-index: 100;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none !important;
+}
+
+.carousel.carousel-fade .item {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  opacity:0.4;
+}
+
+.carousel.carousel-fade .active.item {
+  opacity:1;
+}
+
+.carousel.carousel-fade .active.left,
+.carousel.carousel-fade .active.right {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  filter: alpha(opacity=0.8);
+}
+
+.carousel.carousel-fade .next,
+.carousel.carousel-fade .prev {
+  left: 0;
+  z-index: 1;
+}
+
+.carousel.carousel-fade .carousel-control {
+  z-index: 3;
+}
+
+.calendar_menu_row {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.currentMonth {
+  padding-bottom: 1%;
+}
+
+
+.teaser_button {
+   border-radius: 20px;
+   background-image: url("../images/crossword.png") !important;
+   background-repeat: repeat;
+   border: solid 2px #000;
+   width: 125px;
+   display: block;
+   margin-left: 80%;
+
+}
+.toolbar_button {
+   margin-bottom: 20px;
+   border-radius: 20px;
+   background-image: url("../images/crossword.png") !important;
+   background-repeat: repeat;
+   border: solid 2px #000;
+   width: 100px;
+   position: absolute;
+
+   
+
+}
+
+.first_toolbar {
+  bottom: 5px;
+}
+
+.second_toolbar {
+
+}
+
+
+
+#ready_to_send {
+   margin-top: 20% !important;
+   border-radius: 20px;
+   background-image: url("../images/crossword.png") !important;
+   background-repeat: repeat;
+   border: solid 2px #000;
+   width: 200px;
+   position: absolute;
+   display: block;
+   margin: 0 auto;
+   margin-top: 2%;
+   margin-bottom: 2%;
+
+
+}
+
+#ready_to_send:hover {
+  background-image: none !important;
+  background-color: green !important;
+
+
+  -webkit-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+
+  
+}
+
+
+
+#hiddenInput {
+  display: none;
+}
+
+#subfile {
+  height: 25px;
+}
+
+.input_txt{
+ font-size: 12pt;
+ line-height: 10px !important;
+}
+
+.visible_input {
+  height: 25px;
+}
+
+.visible_input:hover {
+  background-image: none !important;
+  background-color: green !important;
+
+
+  -webkit-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+
+}
+
+
+
+.teaser_button:hover , .toolbar_button:hover {
+  -webkit-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  background-image: none !important;
+  background-color: green !important;
+
+}
+
+.link_wrap: {
+  position: relative;
+  bottom: 95%;
+  z-index: 100;
+}
+
+#back_to_top {
+  text-align: center;
+}
+
+.button_text {
+  padding-top: 5%;
+
+}
+
+
+
+.padding_menu {
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+}
+
+.content {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+
+#resizable {
+
+  margin: 0%;
+  padding: 0%;
+} 
+
+.layer1{
+  position: absolute;
+  z-index: 100;
+  margin: 0% !important;
+}
+
+.layer2{
+  position: absolute;
+  z-index: 200;
+  left: 37px;
+  top: 69px;
+  margin: 0% !important;
+}
+
+.layer3{
+  position: absolute;
+  z-index: 300;
+  margin: 0% !important;
+}
+
+.photo {
+  width:487px;
+  height: 329px;
+}
+ 
+.toolbar {
+  /*
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+  */
+  background-color: #D6D6D6;
+  position: absolute;
+  margin-left: 10px;
+  border-style: solid;
+  border-color:  #858585; 
+  top: 100px;
+  width:80px;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+  box-shadow: 5px 6px 56px -15px rgba(0,0,0,0.75);
+ }
+
+ .toolbox {
+  padding: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  max-width: 50px;
+  max-height: 50px;
+  background-image: url("../images/crossword.png") !important;
+  background-repeat: repeat;
+ }
+
+ .toolbox:hover {
+  background-image: none !important;
+  background-color: #8CD0FF !important;
+ }
+
+ .overflow {
+  overflow: hidden;
+  position:relative;
+  height: 800px;
+  width:550px;
+}
+
+form .input-row { 
+  width: auto;
+  height: auto;  
+}
+
+
+.paddingleft {
+  padding-left:13%;
+}
+
+.form {
+  padding-bottom: 10%;
+}
+
+.addform {
+  padding-bottom:10%;
+  padding-left: 10px;
+}
+
+
+
+.paddtop {
+  padding-top: 8%;
+}
+
+.txt_indent {
+  text-indent: 10px;
+}
+
+.glyphicon-chevron-left {
+  float: right;
+  font-size: 50px;
+  padding-top:10%;
+  color: black;
+}
+
+.glyphicon-chevron-right {
+  font-size: 50px;
+  padding-top:25%;
+}
+
+.glyphicon-chevron-left:hover, .glyphicon-chevron-right:hover {
+  cursor: pointer;
+}
+
+.dayForm {
+  
+}
+
+.sizeForm {
+
+
+}
+
+.textarea {
+
+}
+
+#button1 {
+  border: outset 4px;
+}
+
+#button2 {
+  border: outset 4px;
+}
+
+#button3 {
+  border: outset 4px;
+}
+
+#button4 {
+  border: outset 4px;
+}
+
+#button5 {
+  border: outset 4px;
+}
+
+.submit_checkbox {
+  top: 15px;
+}
+
+.red {
+  color: #FF2215 !important;
+}
