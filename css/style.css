@@ -497,3 +497,7 @@ form .input-row {
 .red {
   color: #FF2215 !important;
 }
+
+.date {
+  width: 16% !important;
+}

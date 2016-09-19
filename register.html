@@ -66,7 +66,10 @@
   </div>
   <div class="col-lg-12 col-md-12 col-sm-12">
     <p>
-      Aby ostatecznie zakończyć cały proces prosze wypełnic poniższy formularz i zaakceptować warunki korzystania z serwisu.
+      Zdjęcia do wybranego arkusza nalezy przesłać na adres email firmy - drukarniarawicz@gmail.com. TUTAJ PARĘ SŁÓW O WYMAGANIACH I ROZDZIELCZOŚCI.
+    </p>
+    <p>
+      Prosimy również o wypełnienie wymaganych pół poniższego formularza celem sfinalizowania zamówienia.
     </p>
   </div>
  </div>
@@ -74,57 +77,70 @@
 
 <form>
   <div class="container">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+       <p>Na życzenie klienta możemy nanieśc dedykowane daty, które ozdobią kalendarz</p>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+       <p>Styczeń</p>
+       <button class="btn btn-default" type="button" onclick="addMonth(0)">Dodaj opis</button>
+       <div id="appendDate0">
+       </div>
+       
+    </div>
+  </div>
+  <div class="container">
    <div class="col-lg-12 col-md-12 col-sm-12"> 
       <div class="form-group">
-        <label for="inputName"><p>Imię:</p></label>
+        <label for="inputName"><p>Imię*:</p></label>
         <input type="text" class="form-control" id="inputName" placeholder="Nazwisko">
       </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12"> 
       <div class="form-group">
-        <label for="inputSurname"><p>Nazwisko:</p></label>
+        <label for="inputSurname"><p>Nazwisko*:</p></label>
         <input type="text" class="form-control" id="inputSurname" placeholder="Nazwisko">
       </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12"> 
       <div class="form-group">
-        <label for="inputEmail"><p>Email:</p></label>
+        <label for="inputEmail"><p>Email*:</p></label>
         <input type="email" class="form-control" id="inputEmail" placeholder="Email">
       </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12"> 
       <div class="form-group">
-        <label for="inputPhoneNumber"><p>Numer telefonu:</p></label>
+        <label for="inputPhoneNumber"><p>Numer telefonu*:</p></label>
         <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Numer telefonu">
       </div>
     </div>
      <div class="col-lg-6 col-md-6 col-sm-6">
        <div class="form-group">
-        <label for="inputStreet"><p>Ulica:</p></label>
+        <label for="inputStreet"><p>Ulica*:</p></label>
         <input type="text" class="form-control" id="inputStreet" placeholder="Ulica">
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6">
        <div class="form-group">
-        <label for="inputLocal"><p>Numer mieszkania:</p></label>
+        <label for="inputLocal"><p>Numer mieszkania*:</p></label>
         <input type="text" class="form-control" id="inputLocal" placeholder="Numer posesji / numer lokalu">
       </div>
     </div>
      <div class="col-lg-6 col-md-6 col-sm-6">
        <div class="form-group">
-        <label for="inputCity"><p>Miasto:</p></label>
+        <label for="inputCity"><p>Miasto*:</p></label>
         <input type="text" class="form-control" id="inputCity" placeholder="Miasto">
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6">
        <div class="form-group">
-        <label for="inputLocal"><p>Kod pocztowy:</p></label>
+        <label for="inputLocal"><p>Kod pocztowy*:</p></label>
         <input type="text" class="form-control" id="inputPostal" placeholder="Kod pocztowy np: 63-900">
       </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12"> 
       <div class="form-group">
-        <label for="inputPrice"><p>Opcja dostawy:</p></label>
+        <label for="inputPrice"><p>Opcja dostawy*:</p></label>
         <select class="form-control" id="inputShipping">
           <option></option>
           <option>Odbiór osobisty w siedzibie firmy -  0 zł</option>
@@ -135,7 +151,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12"> 
       <div class="checkbox">
         <label>
-          <input type="checkbox" class="submit_checkbox"> <p>Przeczytałem i akceptuję <a class="red" href="terms.html">REGULAMIN</a> serwisu.</p>
+          <input type="checkbox" class="submit_checkbox" id="accept_terms"> <p>Przeczytałem i akceptuję <a class="red" href="terms.html">REGULAMIN</a> serwisu*.</p>
         </label>
       </div>
     <button type="button" id="submit_form" onclick="submitFormNow()" class="btn btn-default teaser_button"><p class="text-center">Prześlij</p></button>
@@ -155,9 +171,6 @@
 </body>
 
 <script type="text/javascript" src="jquery2.1.4.min.js"></script>
-<script type="text/javascript" src="jqueryrotate.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script type="text/javascript" src="validation.js"></script>
-<script type="text/javascript" src="site.js"></script>
-
 </html>
