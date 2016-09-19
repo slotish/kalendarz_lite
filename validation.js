@@ -2,22 +2,15 @@
 var months = ['january', 'february', 'march', 'april', 'may', 'juni', 'july', 'august', 'september', 'october',
  'november', 'december']
 
- function setDatePicker(){
- 	for (var i = 0; i<=months.length; i++){
-    	tmp = i+1;
-    
-	$('#' + months[i]).datepicker({
-		defaultDate: '01.0' + tmp + '.2017'
-	});
-
-	}
- }
+ var monthCalculator = 0;
+	
 
  function addMonth(n){
 
- 	$('#appendDate' + n).append('<input id=' + months[n] + ' type="text" class="form-control date" placeholder="Wybierz dzień miesiąca">\r');
- 	$('#appendDate' + n).append('<textarea rows="2" maxlength="20" placeholder="Dodaj opis"></textarea>\r')
- 	setDatePicker();
+
+ 	$('#appendDate' + n).append('<p class="addedForm"><input class=' + months[n] + ' type="text" class="form-control date" placeholder="Wybierz dzień miesiąca"></p>');
+ 	$('#appendDate' + n).append('<p class="addedForm"><textarea rows="2" maxlength="20" placeholder="Dodaj opis"></textarea></p>');
+
  }
 
 $(document).ready(function(){
@@ -59,7 +52,56 @@ return datepicker.regional.pl;
 
 } ) );
 /* Koniec polonizacji */
+$('.button_append').click(function(){
+	$('.january').datepicker({
+			defaultDate: '01.01.2017'
+	});
 
+ 	$('.february').datepicker({
+			defaultDate: '01.02.2017'
+	});
+
+	$('.march').datepicker({
+			defaultDate: '01.03.2017'
+	});
+
+	$('.april').datepicker({
+			defaultDate: '01.04.2017'
+	});
+
+	$('.may').datepicker({
+			defaultDate: '01.05.2017'
+	});
+
+	$('.juni').datepicker({
+			defaultDate: '01.06.2017'
+	});
+
+	$('.july').datepicker({
+			defaultDate: '01.07.2017'
+	});
+
+	$('.august').datepicker({
+			defaultDate: '01.08.2017'
+	});
+
+	$('.september').datepicker({
+			defaultDate: '01.09.2017'
+	});
+
+	$('.october').datepicker({
+			defaultDate: '01.10.2017'
+	});
+
+	$('.november').datepicker({
+			defaultDate: '01.11.2017'
+	});
+
+	$('.december').datepicker({
+			defaultDate: '01.12.2017'
+	});
+})
+ 
 
 })
 
@@ -171,7 +213,8 @@ function submitFormNow(){
 	console.log(addressFlag);
 
 	if (positiveFlagsCounter === 10){
-		window.location.href = '/some/new/page';
+		window.location.href = 'thankyou.html';
+		
 	} else {
 		alert("Uzupełnij arkusz aby przejśc dalej!")
 	}

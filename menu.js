@@ -11,6 +11,16 @@ $( document ).ready(function() {
     	interval: 3000,
     	pause: null
     });
+
+    $('.third_carousel').carousel({
+        interval: 4000,
+        pause: null
+    });
+
+    $('.fourth_carousel').carousel({
+        interval: 3000,
+        pause: null
+    });
     smoothScroll(1000);
 
     $('.firstCalendar').mouseover(function(){
@@ -28,6 +38,22 @@ $( document ).ready(function() {
 
     $('.secondCalendar').mouseout(function(){
     	$('.secondCalendar').css('border' , 'none');
+    })
+
+    $('.thirdCalendar').mouseover(function(){
+        $('.thirdCalendar').css('border' , 'solid 2px red');
+    })
+
+    $('.thirdCalendar').mouseout(function(){
+        $('.thirdCalendar').css('border' , 'none');
+    })
+
+    $('.fourthCalendar').mouseover(function(){
+        $('.fourthCalendar').css('border' , 'solid 2px red');
+    })
+
+    $('.fourthCalendar').mouseout(function(){
+        $('.fourthCalendar').css('border' , 'none');
     })
     
 });
