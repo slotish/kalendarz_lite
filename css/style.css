@@ -515,3 +515,27 @@ form .input-row {
   padding-bottom: 25px;
   color: blue;
 }
+
+#lookUp{
+
+  width:600px;
+  height: 1000px;
+  position: fixed;
+  top: 1%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  background-color: white;
+  z-index: 1000;
+  opacity: 0,2;
+  display: none;
+
+
+}
+
+.right {
+  margin-left: 95%;
+  font-size: 14pt;
+  z-index: 2000;
+}
+
