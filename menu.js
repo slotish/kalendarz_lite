@@ -2,7 +2,11 @@
 
 $( document ).ready(function() {
 
-    appendPreview(1)
+    //appendPreview(1)
+ 
+
+    
+  
 
 	setTimeout(function(){
     $('.first_carousel').carousel({
@@ -77,17 +81,22 @@ function smoothScroll(speed) {
 }
 
 function appendPreview(n){
+    $('#lookUp').empty();
     $('#lookUp').fadeIn("slow")
-    $('#lookUp').append(' <div id="Carousel" class="carousel  sixth_carousel carousel-fade center-block" data-ride="carousel"><div class="carousel-inner center-block " role="listbox"><div class="item active"><img src="images/'+n+'_1.png" alt="..." class="img-responsive center-block active"></div><div class="item"><img src="images/'+n+'_2.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_3.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_4.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_5.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_6.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_7.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_8.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_9.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_10.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_11.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_12.png" alt="..." class="img-responsive center-block"></div>');
-    $('#lookUp').append('</div>');
+    //$('#lookUp').append('<span class="glyphicon glyphicon-remove rightClose" aria-hidden="true"></span>');
+    $('#lookUp').append(' <span class="glyphicon glyphicon-remove rightClose" aria-hidden="true"></span><div id="Carousel" class="carousel  sixth_carousel carousel-fade center-block" data-ride="carousel"><div class="carousel-inner center-block " role="listbox"><div class="item active"><img src="images/'+n+'_1.png" alt="..." class="img-responsive center-block active"></div><div class="item"><img src="images/'+n+'_2.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_3.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_4.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_5.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_6.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_7.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_8.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_9.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_10.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_11.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_12.png" alt="..." class="img-responsive center-block"></div></div>');
+    //$('#lookUp').append('</div>');
     $('#lookUp').append('<a class="left carousel-control" href="#Carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left">');
-    $('#lookUp').append('</span></a>');
-    $('#lookUp').append('<a class="right carousel-control" href="#Carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right">');
-    $('#lookUp').append('</span></a>');
-    $('#lookUp').append('</div>');
+    $('#lookUp').append('</span></a><a class="right carousel-control" href="#Carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a></div>');
+   // $('#lookUp').append('<a class="right carousel-control" href="#Carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right">');
+    //$('#lookUp').append('</span></a>');
+    //$('#lookUp').append('</div>');
 
-    $('.right').click(function(){
+    $('.rightClose').click(function(){
+        $('#wrapPreview').fadeOut("slow")
         $('#lookUp').fadeOut("slow")
     })
+
+
 
 }

@@ -154,9 +154,10 @@ a:hover, a:active {
 
 .relativepic {
   position: absolute;
-  bottom: 43%;
+  bottom: 48%;
   left: 10%;
   z-index: 100;
+  border: solid 1px black;
 }
 
 .carousel-control.left, .carousel-control.right {
@@ -314,7 +315,7 @@ a:hover, a:active {
 
 .link_wrap: {
   position: relative;
-  bottom: 95%;
+  bottom: 90%;
   z-index: 100;
 }
 
@@ -533,9 +534,37 @@ form .input-row {
 
 }
 
-.right {
+.rightClose {
   margin-left: 95%;
   font-size: 14pt;
   z-index: 2000;
+
 }
 
+#wrapPreview{
+
+  width:600px;
+  height: 50px;
+  position: fixed;
+  top: 1%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  background-color: white;
+  z-index: 1000;
+  opacity: 0,2;
+
+}
+
+.carousel-control {
+
+  max-height: 100px !important;
+  top: 300px !important; 
+
+}
+
+
+.top_indent {
+  margin-top: 15%;
+  margin-bottom: 5%;
+}
