@@ -572,3 +572,11 @@ form .input-row {
 #calendars_amount {
   width: 10%;
 }
+
+#accept_terms_alert {
+ color: red;
+}
+
+#accept_personal_data_alert {
+  color: red;
+}

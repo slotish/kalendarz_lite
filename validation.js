@@ -134,6 +134,7 @@ function submitFormNow(){
 	var postalCodeFlag = postalCode.test(postalCodeVal);
 	var addressFlag = addressReg.test(addressVal);
 	var acceptTermsFlag = $('#accept_terms').is(':checked');
+	var acceptPersonalData = $('#accept_personal_data').is(':checked');
 
 	var shippingFlag = function(){
 		if ($('#inputShipping').val() !== ""){
@@ -144,7 +145,7 @@ function submitFormNow(){
 	}
 
 	var validationArray = [emailFlag, phoneFlag, nameFlag, surnameFlag, cityFlag, streetFlag, postalCodeFlag, addressFlag,
-	 shippingFlag, acceptTermsFlag];
+	 shippingFlag, acceptTermsFlag, acceptPersonalData];
 
 
 	if (!phoneFlag){
@@ -201,6 +202,20 @@ function submitFormNow(){
 		$('#inputShipping').css('border', '1px solid #ccc');
 	}
 
+	if (!acceptTermsFlag){
+		$('#accept_terms_alert').append('  Musisz zaakceptować regulamin!');
+		
+	}else {
+		$('#accept_terms_alert').empty();
+	}
+
+	if (!acceptPersonalData){
+		$('#accept_personal_data_alert').append('  Musisz wyrazić zgodę na przetwarzanie danych osobowych!');
+		
+	}else {
+		$('#accept_personal_data_alert').empty();
+	}
+
 
 
 	var positiveFlagsCounter = 0;
@@ -212,12 +227,9 @@ function submitFormNow(){
 
 	console.log(addressFlag);
 
-	if (positiveFlagsCounter === 10){
+	if (positiveFlagsCounter === 11){
 		window.location.href = 'thankyou.html';
-		
-	} else {
-		alert("Uzupełnij arkusz aby przejśc dalej!")
-	}
+	} 
 
 
 	
