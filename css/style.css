@@ -84,7 +84,8 @@ html , body {
   display: block;
   width: 100%;
   z-index: 1000;
-}
+  bottom: 100%;
+  }
 
 .top_menu_text {
   line-height: 80px;
@@ -580,3 +581,12 @@ form .input-row {
 #accept_personal_data_alert {
   color: red;
 }
+
+.costs_text {
+  min-height: 1080px;
+}
+
+#comments {
+  margin-bottom: 5%;
+}
+
