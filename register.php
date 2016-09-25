@@ -58,6 +58,7 @@
 
 
 <form id="registerForm" method="POST" action="thankyou.php">
+	<input type="hidden" name="template" value="<?=intval($_GET["id"])?>"/>
 	<div class="container">
 	 <div class="row">
 	  <div class="col-lg-12 col-md-12 col-sm-12">

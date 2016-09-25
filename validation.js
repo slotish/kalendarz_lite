@@ -237,8 +237,8 @@ function submitFormNow(){
 
 	console.log(addressFlag);
 
-	if (true || positiveFlagsCounter === 11){
-		console.log($("#registerForm"));
+	if (positiveFlagsCounter === 11){
+		//console.log($("#registerForm"));
 		$("#registerForm").submit();	
 	} else {
 		alert("Uzupełnij arkusz aby przejśc dalej!")
