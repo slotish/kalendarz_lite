@@ -27,7 +27,7 @@
 </head>
   
 <body>
-    <div id="top_menu_index">
+    <div id="top_menu">
       <a name="top_Anchor" id="top_Anchor">
       <div class="row">
         <div class="col-sm-1 col-md-1 col-lg-1">
@@ -35,40 +35,38 @@
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
           <a href="http://drukarniarawicz.pl"><img class="top_menu_logo" src="images/Logo.png"></a>
         </div>
-        
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-          <div>
-            <p class="top_menu_text text_no_1"><a href="#"> POWRÓT </a></p>
-          </div>
+        <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
           <div>
-            <p class="top_menu_text text_no_2"><a href="#"> Pomoc </a></p>
+            <p class="top_menu_text text_no_1"><a href="/kalendarz"> Menu </a></p>
           </div>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
           <div >
-            <p class="top_menu_text text_no_3"><a href="#"> Regulamin </a></p>
+            <p class="top_menu_text text_no_3"><a href="terms.html"> Regulamin </a></p>
           </div>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-          <p class="top_menu_text text_no_3"><a href="#"> Cennik </a></p>
+          <p class="top_menu_text text_no_3"><a href="costs.html"> Cennik </a></p>
         </div>
       </div>
-    </div>
+      <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+      </div>
+</div>
 
 <div class="container">
  <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12">
     <h2>
-      Dziękujemy za złożenie zamówienia !
+      ZAMÓWIENIE KALENDARZA
     </h2>
   </div>
   <div class="col-lg-12 col-md-12 col-sm-12">
-    <p >
-      Zdjęcia do wybranego arkusza nalezy przesłać na adres email firmy - drukarniarawicz@gmail.com. TUTAJ PARĘ SŁÓW O WYMAGANIACH I ROZDZIELCZOŚCI.
-    </p>
-   
+  <div class="form-group">
+      <p class="paddingForm">Ilośc zamawianych kalendarzy:</p>
+      <input type="number" class="form-control" id="calendars_amount" min="1" value="1">
+   </div>
   </div>
  </div>
 </div>
@@ -76,7 +74,7 @@
 <form id="registerForm" method="POST" action="thankyou.php">
   <div class="container">
     
-       <p class="paddingForm">Na życzenie klienta możemy nanieśc dedykowane daty, które ozdobią kalendarz:</p>
+       <p class="paddingForm">Unikatowe wpisy pod datami Twojego kalendarza</p>
     
 
     <div class="col-lg-6 col-md-6 col-sm-6 center-text">
@@ -143,10 +141,36 @@
     </div>
   </div>
 
+  <div class="container">
+   <div class="col-lg-12 col-md-12 col-sm-12"> 
+   <h2 class="paddingForm">
+      Uwaga!
+   </h2>
+   <p>
+    Wybrane przez Państwa zdjęcia do kalendarza, aby jakość ich po wydrukowaniu nie
+
+wzbudzała zastrzeżeń, powinny mieć min. 1600 pikseli po krótszym boku
+
+Fotografie do wybranego przez Państwa kalendarza, po wypełnieniu formularza,
+
+prosimy o wysłanie mailem na adres: drukarniarawicz@gmail.com
+
+Jednocześnie prosimy o nadanie nazw miesięcy poszczególnym fotografiom zgodnie
+
+z ich przeznaczeniem.
+
+W jednym mailu można przesłać załącznik o max objętości 20 MB, a więc wybrane
+
+zdjęcia należy podzielić na klika części, lub przesłać na nasz adres przy pomocy
+
+wybranej zewnętrznej aplikacji (np. www.wetransfer.com)
+   </p>
+   </div>
+  </div>
 
   <div class="container">
     <p class="paddingForm">
-      Prosimy również o wypełnienie wymaganych pół poniższego formularza celem sfinalizowania zamówienia.
+      Dane osobowe do zamówienia
     </p>
    <div class="col-lg-12 col-md-12 col-sm-12"> 
 
@@ -208,11 +232,29 @@
       </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12"> 
+      <label for="comments"><p>Twoje uwagi dot. zamówienia:</p></label>
+      <textarea class="form-control" rows="3" id="comments" maxlength="200" placeholder="Twoje uwagi - limit 200 znaków"></textarea>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12"> 
       <div class="checkbox">
         <label>
-          <input type="checkbox" class="submit_checkbox" id="accept_terms"> <p>Przeczytałem i akceptuję <a class="red" href="terms.html">REGULAMIN</a> serwisu*.</p>
+          <input type="checkbox" class="submit_checkbox" id="accept_terms"> <p id="accept_terms_text">Oświadczam że zapoznałem się i akceptuję <a class="red" href="terms.html" target="_blank">REGULAMIN</a> przyjmowania zleceń firmy Multigraf Zygmunt Musielak *.</p>
+          <p id="accept_terms_alert"></p>
         </label>
       </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12"> 
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" class="submit_checkbox" id="accept_personal_data"> <p>Wyrażam zgodę na przetwarzanie przez firmę Multigraf Zygmunt
+          Musielak danych osobowych zawartych w niniejszym formularzu w
+          celach związanych z realizacją zamówienia zgodnie z ustawą z dnia
+          29.08.1997 r. o ochronie danych osobowych.*</p><p id="accept_personal_data_alert"></p>
+        </label>
+
+      </div>
+      </div>
+    </div>
     <button type="button" id="submit_form" onclick="submitFormNow()" class="btn btn-default teaser_button"><p class="text-center">Prześlij</p></button>
   </div>
 </form>
