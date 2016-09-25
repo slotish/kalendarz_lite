@@ -1,6 +1,16 @@
 
-var months = ['january', 'february', 'march', 'april', 'may', 'juni', 'july', 'august', 'september', 'october',
- 'november', 'december']
+var months = [{name:'january', count:0},
+				{name:'february', count:0},
+				{name:'march', count:0},
+				{name:'april', count:0},
+				{name:'may', count:0},
+				{name:'juni', count:0},
+				{name:'july', count:0},
+				{name:'august', count:0},
+				{name:'september', count:0},
+				{name:'october', count:0},
+				{name:'november', count:0},
+				{name:'december', count:0}]
 
  var monthCalculator = 0;
 	
@@ -8,9 +18,9 @@ var months = ['january', 'february', 'march', 'april', 'may', 'juni', 'july', 'a
  function addMonth(n){
 
 
- 	$('#appendDate' + n).append('<p class="addedForm"><input class=' + months[n] + ' type="text" class="form-control date" placeholder="Wybierz dzień miesiąca"></p>');
- 	$('#appendDate' + n).append('<p class="addedForm"><textarea rows="2" maxlength="20" placeholder="Dodaj opis"></textarea></p>');
-
+ 	$('#appendDate' + n).append('<p class="addedForm"><input name="month_'+n+'_'+months[n].count+'_date" class=' + months[n].name + ' type="text" class="form-control date" placeholder="Wybierz dzień miesiąca"></p>');
+ 	$('#appendDate' + n).append('<p class="addedForm"><textarea name="month_'+n+'_'+months[n].count+'_comment" rows="2" maxlength="20" placeholder="Dodaj opis"></textarea></p>');
+	months[n].count++;
  }
 
 $(document).ready(function(){
@@ -227,9 +237,9 @@ function submitFormNow(){
 
 	console.log(addressFlag);
 
-	if (positiveFlagsCounter === 11){
+	if (true || positiveFlagsCounter === 11){
 		console.log($("#registerForm"));
-		//$("#registerForm").submit();	
+		$("#registerForm").submit();	
 	} else {
 		alert("Uzupełnij arkusz aby przejśc dalej!")
 	}

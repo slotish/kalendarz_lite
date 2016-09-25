@@ -1,5 +1,24 @@
-<!DOCTYPE html>
+<?php
+//here will be security stuff
 
+function orderMail($_data){
+	$result = "Zalecenie:\n";
+	$result .= print_r($_data,true);
+	
+	return $result;
+}
+
+$to = "michal.maciejczyk23@gmail.com";
+$subject = "Zlecenie kalendarza";
+$txt = orderMail($_POST);
+$headers =  "From: klient@drukarniarawicz.pl" . "\r\n" ;
+//			"CC: somebodyelse@example.com";
+
+$result = mail($to,$subject,$txt, $headers);
+
+?>
+
+<!DOCTYPE html>
 <html class="mouseClass">
 
 <head>
@@ -58,9 +77,9 @@
 </div>
 <div class="container">
   <div class="col-lg-12 col-md-12 col-sm-12">
-    <h1> Twoje zamowienie zostało przyjęte. Dziekujemy!</h1>
+    <h1> Twoje zamowienie zostało <?=($result?"tak":"nie")?> przyjęte. Dziekujemy!</h1>
     <h2>
-    W przeciagu 24 godzin otrzymasz od nas maila na adres: <div id="mail_sent"></div> z potwierdzeniem. Gdyby taka informacja do Ciebie nie dotarła - prosimy o kontakt.
+    W przeciagu 24 godzin otrzymasz od nas maila na adres: <div id="mail_sent"><?=$_POST["email"]?></div> z potwierdzeniem. Gdyby taka informacja do Ciebie nie dotarła - prosimy o kontakt.
     </h2>
   </div>
 </div>
