@@ -213,8 +213,8 @@ function submitFormNow(){
 	console.log(addressFlag);
 
 	if (positiveFlagsCounter === 10){
-		window.location.href = 'thankyou.html';
-		
+		console.log($("#registerForm"));
+		//$("#registerForm").submit();	
 	} else {
 		alert("Uzupełnij arkusz aby przejśc dalej!")
 	}

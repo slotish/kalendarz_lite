@@ -76,3 +76,6 @@ $(document).ready(function(){
 })
 </script>
 </html>
+<?
+print_r($_POST);
+?>
