@@ -4,8 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-    <!-- NO FOLLOW NO INDEX !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    
     <title>Kalendarz</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -14,16 +13,12 @@
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css">
     <!-- Scripts -->
 
-    <!-- próbne
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script type="text/javascript" src="jqueryrotate.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-  <SCRIPT TYPE="text/javascript" SRC="site.js"></SCRIPT>
--->
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 </head>
   
 <body>
@@ -237,6 +232,11 @@ wybranej zewnętrznej aplikacji (np. www.wetransfer.com)
       <label for="comments"><p>Twoje uwagi dot. zamówienia:</p></label>
       <textarea name="comments" class="form-control" rows="3" id="comments" maxlength="200" placeholder="Twoje uwagi - limit 200 znaków"></textarea>
     </div>
+     <div class="col-lg-12 col-md-12 col-sm-12"> 
+      <p>Zabezpieczenie anty-spamowe:*</p>
+      <div class="g-recaptcha" data-sitekey="6LfrrQcUAAAAAFMqCkuZacpK7roGYvlOD1cCL2gB"></div>
+      <p id="re_captcha_alert"></p>
+    </div>
     <div class="col-lg-12 col-md-12 col-sm-12"> 
       <div class="checkbox">
         <label>
@@ -255,8 +255,12 @@ wybranej zewnętrznej aplikacji (np. www.wetransfer.com)
         </label>
 
       </div>
-      </div>
     </div>
+
+    </div>
+    
+  
+
     <button type="button" id="submit_form" onclick="submitFormNow()" class="btn btn-default teaser_button"><p class="text-center">Prześlij</p></button>
   </div>
 </form>

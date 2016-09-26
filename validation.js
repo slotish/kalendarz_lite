@@ -154,8 +154,19 @@ function submitFormNow(){
 		}
 	}
 
+	var reCaptcha ;
+	var response = grecaptcha.getResponse();
+	if(response.length == 0){
+		reCaptcha = false
+	}else {
+		reCaptcha = true;
+	}
+    
+
+
+
 	var validationArray = [emailFlag, phoneFlag, nameFlag, surnameFlag, cityFlag, streetFlag, postalCodeFlag, addressFlag,
-	 shippingFlag, acceptTermsFlag, acceptPersonalData];
+	 shippingFlag, acceptTermsFlag, acceptPersonalData, reCaptcha];
 
 
 	if (!phoneFlag){
@@ -226,6 +237,12 @@ function submitFormNow(){
 		$('#accept_personal_data_alert').empty();
 	}
 
+	if (!reCaptcha){
+		$('#re_captcha_alert').append('Musisz wypełnić recaptche');
+		
+	}else {
+		$('#re_captcha_alert').empty();
+	}
 
 
 	var positiveFlagsCounter = 0;
@@ -237,7 +254,7 @@ function submitFormNow(){
 
 	console.log(addressFlag);
 
-	if (positiveFlagsCounter === 11){
+	if (positiveFlagsCounter === 12){
 		//console.log($("#registerForm"));
 		$("#registerForm").submit();	
 	} else {

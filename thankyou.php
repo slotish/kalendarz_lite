@@ -73,7 +73,7 @@ function orderMail($_data){
 	return $result;
 }
 
-$to = "michal.maciejczyk23@gmail.com";
+$to = "drukarniarawicz@gmail.com";
 $subject = "Zlecenie kalendarza";
 $txt = orderMail($_POST);
 $headers =  "From: klient@drukarniarawicz.pl" . "\r\n" ;
@@ -87,8 +87,6 @@ $result = mail($to,$subject,$txt, $headers);
 
 <head>
     <meta charset="UTF-8">
-    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-    <!-- NO FOLLOW NO INDEX !!!!!!!!!!!!!!!!!!!!!!!!!!! -->
     <title>Kalendarz</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -97,12 +95,8 @@ $result = mail($to,$subject,$txt, $headers);
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.min.css">
     <!-- Scripts -->
 
-    <!-- próbne
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script type="text/javascript" src="jqueryrotate.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-  <SCRIPT TYPE="text/javascript" SRC="site.js"></SCRIPT>
--->
+
+
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
