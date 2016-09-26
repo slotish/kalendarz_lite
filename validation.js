@@ -154,19 +154,19 @@ function submitFormNow(){
 		}
 	}
 
-	var reCaptcha ;
+	var reCaptchaFlag ;
 	var response = grecaptcha.getResponse();
 	if(response.length == 0){
-		reCaptcha = false
+		reCaptchaFlag = false
 	}else {
-		reCaptcha = true;
+		reCaptchaFlag = true;
 	}
     
 
 
 
 	var validationArray = [emailFlag, phoneFlag, nameFlag, surnameFlag, cityFlag, streetFlag, postalCodeFlag, addressFlag,
-	 shippingFlag, acceptTermsFlag, acceptPersonalData, reCaptcha];
+	 shippingFlag, acceptTermsFlag, acceptPersonalData, reCaptchaFlag];
 
 
 	if (!phoneFlag){
