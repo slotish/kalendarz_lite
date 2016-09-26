@@ -590,3 +590,7 @@ form .input-row {
   margin-bottom: 5%;
 }
 
+#re_captcha_alert {
+  color: red;
+}
+
