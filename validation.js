@@ -237,7 +237,7 @@ function submitFormNow(){
 		$('#accept_personal_data_alert').empty();
 	}
 
-	if (!reCaptcha){
+	if (!reCaptchaFlag){
 		$('#re_captcha_alert').append('Musisz wypełnić recaptche');
 		
 	}else {

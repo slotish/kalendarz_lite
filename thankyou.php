@@ -72,14 +72,28 @@ function orderMail($_data){
 	
 	return $result;
 }
+$errorMsg = "<h2>No error message</h2>";
 
-$to = "drukarniarawicz@gmail.com";
-$subject = "Zlecenie kalendarza";
-$txt = orderMail($_POST);
-$headers =  "From: klient@drukarniarawicz.pl" . "\r\n" ;
-
-$result = mail($to,$subject,$txt, $headers);
-
+if(isset($_POST['g-recaptcha-response'])){
+  $captcha=$_POST['g-recaptcha-response'];
+}
+if(!$captcha){
+	$errorMsg = '<h2>Please check the the captcha form.</h2>';
+} else {
+	$secretKey = "6LfrrQcUAAAAAGahPCGFDfnl5KK6tPN_tElJU9E5";
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+	$responseKeys = json_decode($response,true);
+	if(intval($responseKeys["success"]) !== 1) {
+		$errorMsg = '<h2>You are spammer ! Get the @$%K out</h2>';
+	} else {
+		$to = "drukarniarawicz@gmail.com";
+		$subject = "Zlecenie kalendarza";
+		$txt = orderMail($_POST);
+		$headers =  "From: klient@drukarniarawicz.pl" . "\r\n" ;
+		$result = mail($to,$subject,$txt, $headers);
+	}
+}
 ?>
 
 <!DOCTYPE html>
