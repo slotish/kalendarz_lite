@@ -24,6 +24,13 @@ var months = [{name:'january', count:0},
  }
 
 $(document).ready(function(){
+$(document).on('keyup mouseup', '#calendars_amount', function() {  
+	var totalMoneyValue = $('#calendars_amount').val();
+	var totalMoneyValueSum = totalMoneyValue * 30;
+	$('#total_money_sum').empty();
+	$('#total_money_sum').append('Koszt twojego zamówienia to ' + totalMoneyValueSum + ' zł');
+})
+
 
 /* Polska wersja datepickera  */
 ( function( factory ) {
@@ -145,15 +152,6 @@ function submitFormNow(){
 	var addressFlag = addressReg.test(addressVal);
 	var acceptTermsFlag = $('#accept_terms').is(':checked');
 	var acceptPersonalData = $('#accept_personal_data').is(':checked');
-
-	var shippingFlag = function(){
-		if ($('#inputShipping').val() !== ""){
-			return true;
-		}else {
-			return false;
-		}
-	}
-
 	var reCaptchaFlag ;
 	var response = grecaptcha.getResponse();
 	if(response.length == 0){
@@ -166,7 +164,7 @@ function submitFormNow(){
 
 
 	var validationArray = [emailFlag, phoneFlag, nameFlag, surnameFlag, cityFlag, streetFlag, postalCodeFlag, addressFlag,
-	 shippingFlag, acceptTermsFlag, acceptPersonalData, reCaptchaFlag];
+    acceptTermsFlag, acceptPersonalData, reCaptchaFlag];
 
 
 	if (!phoneFlag){
@@ -217,12 +215,6 @@ function submitFormNow(){
 		$('#inputLocal').css('border', '1px solid #ccc');
 	}
 
-	if (!shippingFlag()){
-		$('#inputShipping').css('border', '2px solid red');
-	}else {
-		$('#inputShipping').css('border', '1px solid #ccc');
-	}
-
 	if (!acceptTermsFlag){
 		$('#accept_terms_alert').append('  Musisz zaakceptować regulamin!');
 		
@@ -254,7 +246,7 @@ function submitFormNow(){
 
 	console.log(addressFlag);
 
-	if (positiveFlagsCounter === 12){
+	if (positiveFlagsCounter === 11){
 		//console.log($("#registerForm"));
 		$("#registerForm").submit();	
 	} else {

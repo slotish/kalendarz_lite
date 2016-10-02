@@ -7,7 +7,7 @@ function securityCheck($_str){
 function orderMail($_data){
 	$dictionary = array(
 		"template" => "Szablon",
-		"templatesNames" => array("Leon kot", "Osioł Robert", "Kozioł Michał", "Szop Andrzej"),
+		"templatesNames" => array("Pierwszy", "Perłowy", "Przyjazny", "Łatwy", "Rawicki", "Inblue", "Pinky", "Melanż"),
 		"calendarsAmount" => "Ilośc zamawianych kalendarzy:",
 		"name" => "Imię",
 		"surname" => "Nazwisko",

@@ -65,6 +65,7 @@
 	  <div class="form-group">
 		  <p class="paddingForm">Ilośc zamawianych kalendarzy:</p>
 		  <input type="number" name="calendarsAmount" class="form-control" id="calendars_amount" min="1" value="1">
+      <p id="total_money_sum">Koszt twojego zamówienia to 30 zł</p>
 	   </div>
 	  </div>
 	 </div>
@@ -216,16 +217,6 @@ wybranej zewnętrznej aplikacji (np. www.wetransfer.com)
        <div class="form-group">
         <label for="inputLocal"><p>Kod pocztowy*:</p></label>
         <input type="text" name="postal" class="form-control" id="inputPostal" placeholder="Kod pocztowy np: 63-900">
-      </div>
-    </div>
-    <div class="col-lg-12 col-md-12 col-sm-12"> 
-      <div class="form-group">
-        <label for="inputPrice"><p>Opcja dostawy*:</p></label>
-        <select name="shipping" class="form-control" id="inputShipping">
-          <option></option>
-          <option>Odbiór osobisty w siedzibie firmy -  0 zł</option>
-          <option>Przesyłka Pocztą Polską - 8 zł</option>
-       </select>
       </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12"> 

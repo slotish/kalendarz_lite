@@ -2,11 +2,8 @@
 
 $( document ).ready(function() {
 
-    //appendPreview(1)
- 
 
-    
-  
+ 
 
 	setTimeout(function(){
     $('.first_carousel').carousel({
@@ -63,7 +60,39 @@ $( document ).ready(function() {
         $('.fourthCalendar').css('border' , 'solid 2px red');
     })
 
-    $('.fourthCalendar').mouseout(function(){
+    $('.fiourthCalendar').mouseout(function(){
+        $('.fourthCalendar').css('border' , 'none');
+    })
+
+    $('.fifthCalendar').mouseover(function(){
+        $('.fourthCalendar').css('border' , 'solid 2px red');
+    })
+
+    $('.fifthCalendar').mouseout(function(){
+        $('.fourthCalendar').css('border' , 'none');
+    })
+
+    $('.sixthCalendar').mouseover(function(){
+        $('.fourthCalendar').css('border' , 'solid 2px red');
+    })
+
+    $('.sixthCalendar').mouseout(function(){
+        $('.fourthCalendar').css('border' , 'none');
+    })
+
+    $('.seventhCalendar').mouseover(function(){
+        $('.fourthCalendar').css('border' , 'solid 2px red');
+    })
+
+    $('.seventhCalendar').mouseout(function(){
+        $('.fourthCalendar').css('border' , 'none');
+    })
+
+    $('.eithCalendar').mouseover(function(){
+        $('.fourthCalendar').css('border' , 'solid 2px red');
+    })
+
+    $('.eithCalendar').mouseout(function(){
         $('.fourthCalendar').css('border' , 'none');
     })
     
@@ -82,15 +111,10 @@ function smoothScroll(speed) {
 
 function appendPreview(n){
     $('#lookUp').empty();
-    $('#lookUp').fadeIn("slow")
-    //$('#lookUp').append('<span class="glyphicon glyphicon-remove rightClose" aria-hidden="true"></span>');
+    $('#lookUp').fadeIn("slow");
     $('#lookUp').append(' <span class="glyphicon glyphicon-remove rightClose" aria-hidden="true"></span><div id="Carousel" class="carousel  sixth_carousel carousel-fade center-block" data-ride="carousel"><div class="carousel-inner center-block " role="listbox"><div class="item active"><img src="images/'+n+'_1.png" alt="..." class="img-responsive center-block active"></div><div class="item"><img src="images/'+n+'_2.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_3.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_4.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_5.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_6.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_7.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_8.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_9.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_10.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_11.png" alt="..." class="img-responsive center-block"></div><div class="item"><img src="images/'+n+'_12.png" alt="..." class="img-responsive center-block"></div></div>');
-    //$('#lookUp').append('</div>');
     $('#lookUp').append('<a class="left carousel-control" href="#Carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left">');
     $('#lookUp').append('</span></a><a class="right carousel-control" href="#Carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a></div>');
-   // $('#lookUp').append('<a class="right carousel-control" href="#Carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right">');
-    //$('#lookUp').append('</span></a>');
-    //$('#lookUp').append('</div>');
 
     $('.rightClose').click(function(){
         $('#wrapPreview').fadeOut("slow")
