@@ -143,7 +143,7 @@ if(!$captcha){
       </div>
     </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-       <p class="top_menu_text text_no_3"><a href="#"> Cennik </a></p>
+       <p class="top_menu_text text_no_3"><a href="costs.html"> Cennik </a></p>
     </div>
   </div>
 </div>
