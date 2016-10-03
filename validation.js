@@ -24,12 +24,7 @@ var months = [{name:'january', count:0},
  }
 
 $(document).ready(function(){
-$(document).on('keyup mouseup', '#calendars_amount', function() {  
-	var totalMoneyValue = $('#calendars_amount').val();
-	var totalMoneyValueSum = totalMoneyValue * 30;
-	$('#total_money_sum').empty();
-	$('#total_money_sum').append('Koszt twojego zamówienia to ' + totalMoneyValueSum + ' zł');
-})
+
 
 
 /* Polska wersja datepickera  */
@@ -117,6 +112,13 @@ $('.button_append').click(function(){
 	$('.december').datepicker({
 			defaultDate: '01.12.2017'
 	});
+})
+
+$(document).on('keyup mouseup', '#calendars_amount', function() {  
+	var totalMoneyValue = $('#calendars_amount').val();
+	var totalMoneyValueSum = totalMoneyValue * 30;
+	$('#total_money_sum').empty();
+	$('#total_money_sum').append('Koszt twojego zamówienia to ' + totalMoneyValueSum + ' zł');
 })
  
 
