@@ -594,3 +594,6 @@ form .input-row {
   color: red;
 }
 
+.responsive_hide {
+  display: none;
+}

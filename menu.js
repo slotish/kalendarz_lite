@@ -26,6 +26,8 @@ $( document ).ready(function() {
         pause: null
     });
 
+    
+
   
     
 
@@ -60,40 +62,40 @@ $( document ).ready(function() {
         $('.fourthCalendar').css('border' , 'solid 2px red');
     })
 
-    $('.fiourthCalendar').mouseout(function(){
+    $('.fourthCalendar').mouseout(function(){
         $('.fourthCalendar').css('border' , 'none');
     })
 
     $('.fifthCalendar').mouseover(function(){
-        $('.fourthCalendar').css('border' , 'solid 2px red');
+        $('.fifthCalendar').css('border' , 'solid 2px red');
     })
 
     $('.fifthCalendar').mouseout(function(){
-        $('.fourthCalendar').css('border' , 'none');
+        $('.fifthCalendar').css('border' , 'none');
     })
 
     $('.sixthCalendar').mouseover(function(){
-        $('.fourthCalendar').css('border' , 'solid 2px red');
+        $('.sixthCalendar').css('border' , 'solid 2px red');
     })
 
     $('.sixthCalendar').mouseout(function(){
-        $('.fourthCalendar').css('border' , 'none');
+        $('.sixthCalendar').css('border' , 'none');
     })
 
     $('.seventhCalendar').mouseover(function(){
-        $('.fourthCalendar').css('border' , 'solid 2px red');
+        $('.seventhCalendar').css('border' , 'solid 2px red');
     })
 
     $('.seventhCalendar').mouseout(function(){
-        $('.fourthCalendar').css('border' , 'none');
+        $('.seventhCalendar').css('border' , 'none');
     })
 
     $('.eithCalendar').mouseover(function(){
-        $('.fourthCalendar').css('border' , 'solid 2px red');
+        $('.eithCalendar').css('border' , 'solid 2px red');
     })
 
     $('.eithCalendar').mouseout(function(){
-        $('.fourthCalendar').css('border' , 'none');
+        $('.eithCalendar').css('border' , 'none');
     })
     
 

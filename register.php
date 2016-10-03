@@ -192,7 +192,7 @@ wybranej zewnętrznej aplikacji (np. www.wetransfer.com)
     <div class="col-lg-12 col-md-12 col-sm-12"> 
       <div class="form-group">
         <label for="inputPhoneNumber"><p>Numer telefonu*:</p></label>
-        <input type="text" name="phoneNumber" class="form-control" id="inputPhoneNumber" placeholder="Numer telefonu">
+        <input type="text" name="phoneNumber" class="form-control" id="inputPhoneNumber" placeholder="Numer telefonu - bez spacji między cyframi!">
       </div>
     </div>
      <div class="col-lg-6 col-md-6 col-sm-6">
