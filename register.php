@@ -147,11 +147,11 @@
    <p>
     Wybrane przez Państwa zdjęcia do kalendarza, aby jakość ich po wydrukowaniu nie
 
-wzbudzała zastrzeżeń, powinny mieć min. 1600 pikseli po krótszym boku
+wzbudzała zastrzeżeń, powinny mieć min. 1600 pikseli po krótszym boku.
 
 Fotografie do wybranego przez Państwa kalendarza, po wypełnieniu formularza,
 
-prosimy o wysłanie mailem na adres: drukarniarawicz@gmail.com
+prosimy o wysłanie mailem na adres: drukarniarawicz@gmail.com .
 
 Jednocześnie prosimy o nadanie nazw miesięcy poszczególnym fotografiom zgodnie
 
@@ -246,6 +246,9 @@ wybranej zewnętrznej aplikacji (np. www.wetransfer.com)
         </label>
 
       </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12"> 
+     <p> * Pola wymagane do wypełnienia.</p>
     </div>
 
     </div>
