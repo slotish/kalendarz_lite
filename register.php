@@ -64,9 +64,9 @@
 	  <div class="col-lg-12 col-md-12 col-sm-12">
 	  <div class="form-group">
         <p class="paddingForm">Wybierz format kalendarza:</p>
-          <select class="form-control" id="formatInput">
-              <option>Kalendarz A3</option>
-              <option>Kalendarz A4</option>
+          <select name="format" class="form-control" id="formatInput">
+              <option value="A3" >Kalendarz A3</option>
+              <option value="A4" >Kalendarz A4</option>
           </select>
 		  <p class="paddingForm">Ilośc zamawianych kalendarzy:</p>
 		  <input type="number" name="calendarsAmount" class="form-control" id="calendars_amount" min="1" value="1">

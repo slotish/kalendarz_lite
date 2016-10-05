@@ -8,6 +8,7 @@ function orderMail($_data){
 	$dictionary = array(
 		"template" => "Szablon",
 		"templatesNames" => array("Pierwszy", "Perłowy", "Przyjazny", "Łatwy", "Rawicki", "Inblue", "Pinky", "Melanż"),
+		"format" => "Format kalendarza",
 		"calendarsAmount" => "Ilośc zamawianych kalendarzy:",
 		"name" => "Imię",
 		"surname" => "Nazwisko",
