@@ -321,7 +321,8 @@ a:hover, a:active {
 
 .footer_menu {
   position: absolute;
-  bottom: 0px; 
+        bottom: 0;
+ 
 }
 
 .teaser2 {
@@ -355,6 +356,10 @@ a:hover, a:active {
   display: none;
 
 
+}
+
+#formatInput {
+  width: 15%;
 }
 
 @media screen and (max-width: 720px) {

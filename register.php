@@ -63,6 +63,11 @@
 	  </div>
 	  <div class="col-lg-12 col-md-12 col-sm-12">
 	  <div class="form-group">
+        <p class="paddingForm">Wybierz format kalendarza:</p>
+          <select class="form-control" id="formatInput">
+              <option>Kalendarz A3</option>
+              <option>Kalendarz A4</option>
+          </select>
 		  <p class="paddingForm">Ilośc zamawianych kalendarzy:</p>
 		  <input type="number" name="calendarsAmount" class="form-control" id="calendars_amount" min="1" value="1">
       <p id="total_money_sum">Koszt twojego zamówienia to 30 zł</p>

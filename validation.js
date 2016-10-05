@@ -114,13 +114,18 @@ $('.button_append').click(function(){
 	});
 })
 
-$(document).on('keyup mouseup', '#calendars_amount', function() {  
-	var totalMoneyValue = $('#calendars_amount').val();
-	var totalMoneyValueSum = totalMoneyValue * 30;
-	$('#total_money_sum').empty();
-	$('#total_money_sum').append('Koszt twojego zamówienia to ' + totalMoneyValueSum + ' zł');
+$(document).on('keyup mouseup', '#calendars_amount, #formatInput', function() {
+	count();
 })
  
+ function count(){
+ 	var formatData = $('#formatInput').val();
+	var multiply = (formatData === "Kalendarz A3") ? 30 : 15
+	var totalMoneyValue = $('#calendars_amount').val();
+	var totalMoneyValueSum = totalMoneyValue * multiply;
+	$('#total_money_sum').empty();
+	$('#total_money_sum').append('Koszt twojego zamówienia to ' + totalMoneyValueSum + ' zł');
+ }
 
 })
 
