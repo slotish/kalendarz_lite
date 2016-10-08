@@ -114,13 +114,13 @@ $('.button_append').click(function(){
 	});
 })
 
-$(document).on('keyup mouseup', '#calendars_amount, #formatInput', function() {
+$(document).on('change keyup mouseup', '#calendars_amount, #formatInput', function() {
 	count();
 })
  
  function count(){
  	var formatData = $('#formatInput').val();
-	var multiply = (formatData === "Kalendarz A3") ? 30 : 15
+	var multiply = (formatData === "A3") ? 30 : 15;
 	var totalMoneyValue = $('#calendars_amount').val();
 	var totalMoneyValueSum = totalMoneyValue * multiply;
 	$('#total_money_sum').empty();

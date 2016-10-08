@@ -69,8 +69,7 @@
 <div class="container">
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <h2>'PIERWSZY'</h2>
-      <a href="register.php?id=0">
-        <div class="teaser2 firstCalendar">
+        <div class="teaser2 firstCalendar" onclick="appendPreview(1)">
            <div  class="first_carousel carousel slide carousel-fade center-block" data-ride="carousel">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner center-block " role="listbox">
@@ -112,21 +111,17 @@
                   </div>
                 </div>
               </div>
-              <a class="link_wrap" href="register.php?id=0">
-                 <img src="images/pierwszy.jpg" alt="..." class="center-block relativepic leon">
-              </a>
+                 <img src="images/pierwszy.jpg" onclick="appendPreview(1)" alt="..." class="center-block relativepic leon">          
             </div>
-         <button type="button" class="btn btn-default responsive_hide center-block" onclick="appendPreview(1)"><p>Podgląd</p></button>
-    </a>
+          <a class="link_wrap" href="register.php?id=0">
+            <button type="button" class="btn btn-default responsive_hide center-block"><p>Wybierz</p></button>
+         </a>
+    
  </div>
 
-   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-    
-       
-       <h2>'PERŁOWY'</h2>
-         
-         <a href="register.php?id=1">
-            <div class="teaser2 secondCalendar">
+   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">        
+       <h2>'PERŁOWY'</h2>           
+            <div class="teaser2 secondCalendar " onclick="appendPreview(2)">
               <div  class="second_carousel carousel slide carousel-fade center-block" data-ride="carousel">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner center-block " role="listbox">
@@ -167,20 +162,17 @@
                     <img src="images/2_12.png" alt="..." class="img-responsive center-block">
                   </div>
                 </div>
-
-              </div>
-          <a href="register.php?id=1">
-            <img src="images/perlowy.jpg" alt="..." class="center-block relativepic">
-          </a>
+              </div>         
+            <img src="images/perlowy.jpg" alt="..." onclick="appendPreview(2)" class="center-block relativepic">       
         </div>
-        <button type="button" class="btn btn-default responsive_hide center-block" onclick="appendPreview(2)"><p>Podgląd</p></button>
+        <a class="link_wrap" href="register.php?id=1">
+          <button type="button" class="btn btn-default responsive_hide center-block"><p>Wybierz</p></button>
+        </a>
     </div>
 
  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-
       <h2>'PRZYJAZNY'</h2>
-      <a href="register.php?id=2">
-        <div class="teaser2 thirdCalendar">
+        <div class="teaser2 thirdCalendar" onclick="appendPreview(3)">
            <div  class="third_carousel carousel slide carousel-fade center-block" data-ride="carousel">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner center-block " role="listbox">
@@ -222,25 +214,18 @@
                   </div>
                 </div>
               </div>
-              <a class="link_wrap" href="register.php?id=2">
-                  <img src="images/Przyjazny.jpg" alt="..." class="center-block relativepic leon">
-              </a>
+                  <img src="images/Przyjazny.jpg" alt="..." onclick="appendPreview(3)" class="center-block relativepic leon">            
             </div>
-            <button type="button" class="btn btn-default responsive_hide center-block" onclick="appendPreview(3)"><p>Podgląd</p></button>
+            <a class="link_wrap" href="register.php?id=2">
+              <button type="button" class="btn btn-default responsive_hide center-block"><p>Wybierz</p></button>
+            </a>
           <div>
         </div>
-    
-
-  
  </div>
 
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-
- 
-
           <h2>'ŁATWY'</h2>
-          <a href="register.php?id=3">
-            <div class="teaser2 fourthCalendar">
+            <div class="teaser2 fourthCalendar" onclick="appendPreview(4)">
                <div  class="carousel fourth_calendar slide carousel-fade center-block" data-ride="carousel">
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner center-block " role="listbox">
@@ -280,25 +265,21 @@
                       <div class="item">
                         <img src="images/4_12.png" alt="..." class="img-responsive center-block">
                       </div>
-                    </div>
-                    
-
-                      </div>
-                      
+                    </div>    
+                      </div> 
                       <a class="link_wrap" href="register.php?id=3">
-            <img src="images/latwy.jpg" alt="..." class="center-block relativepic leon">
+            <img src="images/latwy.jpg" alt="..." onclick="appendPreview(4)" class="center-block relativepic leon">
                       </a>
                     </div>
-                  <button type="button" class="btn btn-default responsive_hide center-block" onclick="appendPreview(4)"><p>Podgląd</p></button>
-            </a>
+                  <a class="link_wrap" href="register.php?id=3">
+                    <button type="button" class="btn btn-default responsive_hide center-block"><p>Wybierz</p></button>
+                  </a>
  </div>
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 
- 
 
           <h2>'RAWICKI'</h2>
-          <a href="register.php?id=4">
-            <div class="teaser2 fifthCalendar">
+            <div class="teaser2 fifthCalendar" onclick="appendPreview(5)">
                <div  class="carousel fifth_calendar slide carousel-fade center-block" data-ride="carousel">
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner center-block " role="listbox">
@@ -338,25 +319,18 @@
                       <div class="item">
                         <img src="images/5_12.png" alt="..." class="img-responsive center-block">
                       </div>
+                    </div>                   
+                      </div>               
+            <img src="images/rawicki.jpg" alt="..." onclick="appendPreview(5)" class="center-block relativepic leon">
                     </div>
-                    
-
-                      </div>
-                      
-                      <a class="link_wrap" href="register.php?id=4">
-            <img src="images/rawicki.jpg" alt="..." class="center-block relativepic leon">
-                      </a>
-                    </div>
-                  <button type="button" class="btn btn-default responsive_hide center-block" onclick="appendPreview(5)"><p>Podgląd</p></button>
-            </a>
+                    <a href="register.php?id=4">
+                      <button type="button" class="btn btn-default responsive_hide center-block" ><p>Wybierz</p></button>
+                    </a>
  </div>
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-
- 
-
           <h2>'INBLUE'</h2>
-          <a href="register.php?id=5">
-            <div class="teaser2 sixthCalendar">
+          
+            <div class="teaser2 sixthCalendar" onclick="appendPreview(6)">
                <div  class="carousel sixth_calendar slide carousel-fade center-block" data-ride="carousel">
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner center-block " role="listbox">
@@ -401,20 +375,17 @@
 
                       </div>
                       
-                      <a class="link_wrap" href="register.php?id=5">
-            <img src="images/inblue.jpg" alt="..." class="center-block relativepic leon">
-                      </a>
+
+            <img src="images/inblue.jpg" alt="..." onclick="appendPreview(6)" class="center-block relativepic leon">
+
                     </div>
-                  <button type="button" class="btn btn-default responsive_hide center-block" onclick="appendPreview(6)"><p>Podgląd</p></button>
-            </a>
+                  <a href="register.php?id=5">
+                    <button type="button" class="btn btn-default responsive_hide center-block" ><p>Wybierz</p></button>
+                  </a>          
  </div>
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-
- 
-
           <h2>'PINKY'</h2>
-          <a href="register.php?id=6">
-            <div class="teaser2 seventhCalendar">
+            <div class="teaser2 seventhCalendar" onclick="appendPreview(7)">
                <div  class="carousel seventh_calendar slide carousel-fade center-block" data-ride="carousel">
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner center-block " role="listbox">
@@ -455,18 +426,17 @@
                         <img src="images/7_12.png" alt="..." class="img-responsive center-block">
                       </div>
                     </div>
-                  </div>                    
-                      <a class="link_wrap" href="register.php?id=3">
-            <img src="images/pinky.jpg" alt="..." class="center-block relativepic leon">
-                      </a>
+                  </div>                         
+            <img src="images/pinky.jpg" alt="..." onclick="appendPreview(7)" class="center-block relativepic leon">   
                     </div>
-                  <button type="button" class="btn btn-default responsive_hide center-block" onclick="appendPreview(7)"><p>Podgląd</p></button>
-         </a>
+                  <a href="register.php?id=6">
+                    <button type="button" class="btn btn-default responsive_hide center-block"><p>Wybierz</p></button>
+                  </a>
  </div>
   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <h2>'MELANŻ'</h2>
-          <a href="register.php?id=7">
-            <div class="teaser2 eithCalendar">
+          
+            <div class="teaser2 eithCalendar" onclick="appendPreview(8)">
                <div  class="carousel eith_calendar slide carousel-fade center-block" data-ride="carousel">
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner center-block " role="listbox">
@@ -508,11 +478,13 @@
                       </div>
                     </div>
                  </div>  
-                      <a class="link_wrap" href="register.php?id=7">
-            <img src="images/melanz.jpg" alt="..." class="center-block relativepic leon">
-                      </a>
+                      
+            <img src="images/melanz.jpg" alt="..." onclick="appendPreview(8)" class="center-block relativepic leon">
+                      
                     </div>
-                  <button type="button" class="btn btn-default responsive_hide center-block" onclick="appendPreview(8)"><p>Podgląd</p></button>
+                  <a href="register.php?id=7">
+                    <button type="button" class="btn btn-default responsive_hide center-block" ><p>Wybierz</p></button>
+                  </a>
             </a>
  </div>
 </div>
