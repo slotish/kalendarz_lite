@@ -362,6 +362,51 @@ a:hover, a:active {
   width: 15%;
 }
 
+#hiddenInput1, #hiddenInput2, #hiddenInput3, #hiddenInput4, #hiddenInput5,#hiddenInput6, #hiddenInput7, #hiddenInput8, #hiddenInput9, #hiddenInput10, #hiddenInput11, #hiddenInput12 {
+  display: none;
+}
+
+.visible_input {
+  height: 25px;
+
+}
+
+.visible_input:hover {
+  background-image: none !important;
+  background-color: green !important;
+
+
+  -webkit-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+  box-shadow: -4px 6px 88px -23px rgba(0,0,0,0.75);
+
+}
+
+.input_txt{
+ font-size: 12pt;
+ line-height: 10px !important;
+ margin-bottom: 300px !important;
+}
+
+#subfile {
+  width: 70%;
+}
+
+#id_description {
+  float: left;
+  margin-top: 50px !important;
+  position: relative;
+}
+
+#submit_form{
+  width: 10%;
+
+}
+
+.top_indent_register{
+  padding-top: 25px;
+}
+
 @media screen and (max-width: 720px) {
   .top_menu_text {
     text-align: center;

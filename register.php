@@ -70,11 +70,108 @@
           </select>
 		  <p class="paddingForm">Ilośc zamawianych kalendarzy:</p>
 		  <input type="number" name="calendarsAmount" class="form-control" id="calendars_amount" min="1" value="1">
-      <p id="total_money_sum">Koszt twojego zamówienia to 30 zł</p>
+      <p id="total_money_sum">Koszt twojego zamówienia to 30 zł - bez ceny wysyłki</p>
 	   </div>
 	  </div>
 	 </div>
 	</div>
+  <div class="container">
+  <p class="paddingForm">Dołącz do zamówienia wybrane pliki fotografii, odpowiednio do kolejnych miesięcy:</p>
+  <p class="centered">
+  UWAGA!
+  </p>
+  <p>
+      Wybrane przez Państwa zdjęcia do kalendarza, aby jakość ich po wydrukowaniu nie
+      wzbudzała zastrzeżeń, powinny mieć min. 1600 pikseli po krótszym boku.
+  </p>
+
+  <div class="col-lg-6 col-md-6 col-sm-6 center-text">
+       <p class="monthHeader">Styczeń</p>
+          <a id="visibleInputButton1" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input1 " disabled>
+          <input id="hiddenInput1"  name="file" type="file" class="f input-large" />
+       
+
+       <p class="monthHeader">Luty</p>
+           <a id="visibleInputButton2" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input2" disabled>
+          <input id="hiddenInput2"  name="file" type="file" class="f input-large" />
+       
+
+       <p class="monthHeader">Marzec</p>
+           <a id="visibleInputButton3" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input3" disabled>
+          <input id="hiddenInput3"  name="file" type="file" class="f input-large" />
+
+       <p class="monthHeader">Kwiecień</p>
+           <a id="visibleInputButton4" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input4" disabled>
+          <input id="hiddenInput4"  name="file" type="file" class="f input-large" />
+
+       <p class="monthHeader">Maj</p>
+           <a id="visibleInputButton5" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input5" disabled>
+          <input id="hiddenInput5"  name="file" type="file" class="f input-large" />
+
+       <p class="monthHeader">Czerwiec</p>
+           <a id="visibleInputButton6" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input6" disabled>
+          <input id="hiddenInput6"  name="file" type="file" class="f input-large" />
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+       <p class="monthHeader">Lipiec</p>
+           <a id="visibleInputButton7" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input7" disabled>
+          <input id="hiddenInput7"  name="file" type="file" class="f input-large" />
+       <p class="monthHeader">Sierpień</p>
+           <a id="visibleInputButton8" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input8" disabled>
+          <input id="hiddenInput8"  name="file" type="file" class="f input-large" />
+       <p class="monthHeader">Wrzesień</p>
+           <a id="visibleInputButton9" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input9" disabled>
+          <input id="hiddenInput9"  name="file" type="file" class="f input-large" />
+       <p class="monthHeader">Październik</p>
+           <a id="visibleInputButton10" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input10" disabled>
+          <input id="hiddenInput10"  name="file" type="file" class="f input-large" />
+       <p class="monthHeader">Listopad</p>
+           <a id="visibleInputButton11" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input11" disabled>
+          <input id="hiddenInput11"  name="file" type="file" class="f input-large" />
+       <p class="monthHeader">Grudzień</p>
+           <a id="visibleInputButton12" class="btn btn-default visible_input">
+            <p class="input_txt">Dodaj zdjęcie</p>
+          </a>     
+          <input type="text" id="subfile" class="input-sm text_input12" disabled>
+          <input id="hiddenInput12"  name="file" type="file" class="f input-large" />
+    </div>
+  </div>
+
+
+
   <div class="container">
     
        <p class="paddingForm">Unikatowe wpisy pod datami Twojego kalendarza</p>
@@ -82,7 +179,7 @@
 
     <div class="col-lg-6 col-md-6 col-sm-6 center-text">
        <p class="monthHeader">Styczeń</p>
-       <button class="btn btn-default button_append" type="button" onclick="addMonth(0)">Dodaj opis</button>
+       <button id="add_description" class="btn btn-default button_append" type="button" onclick="addMonth(0)">Dodaj opis</button>
        <div id="appendDate0">
        </div>
 
@@ -143,32 +240,28 @@
        </div> 
     </div>
   </div>
-
   <div class="container">
-   <div class="col-lg-12 col-md-12 col-sm-12"> 
-   <h2 class="paddingForm">
-      Uwaga!
-   </h2>
-   <p>
-    Wybrane przez Państwa zdjęcia do kalendarza, aby jakość ich po wydrukowaniu nie
+    <div class="col-lg-12 col-md-12 col-sm-12"> 
+        <p class="top_indent_register">
+                   W ciągu 24 godzin od otrzymania zamówienia - wysyłamy projekt wybranego przez
 
-wzbudzała zastrzeżeń, powinny mieć min. 1600 pikseli po krótszym boku.
+        Państwa kalendarza, wraz z fotografiami, do akceptacji.</p>
+        <p>
 
-Fotografie do wybranego przez Państwa kalendarza, po wypełnieniu formularza,
+        Gdyby taka informacja do Państwa nie dotarła - prosimy o kontakt.
 
-prosimy o wysłanie mailem na adres: drukarniarawicz@gmail.com .
+        Po akceptacji i ew. dokonaniu przedpłaty (zależnie od wybranej opcji dostawy),
 
-Jednocześnie prosimy o nadanie nazw miesięcy poszczególnym fotografiom zgodnie
+        otrzymacie Państwo w ciągu 3 dni roboczych (od odnotowania wpłaty na koncie)
 
-z ich przeznaczeniem.
+        informację o wysłaniu zamówienia albo o możliwości jego osobistego odbioru.
+        </p>
+        <p>
+        W razie jakichkolwiek wątpliwości, prosimy o kontakt telefoniczny lub mailowy.
+        </p>
 
-W jednym mailu można przesłać załącznik o max objętości 20 MB, a więc wybrane
-
-zdjęcia należy podzielić na klika części, lub przesłać na nasz adres przy pomocy
-
-wybranej zewnętrznej aplikacji (np. www.wetransfer.com)
-   </p>
-   </div>
+      </p>
+    </div>
   </div>
 
   <div class="container">
@@ -225,6 +318,20 @@ wybranej zewnętrznej aplikacji (np. www.wetransfer.com)
       </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12"> 
+      <div class="form-group">
+        <label for="inputPrice"><p>Opcja dostawy*:</p></label>
+        <select class="form-control" id="inputShipping">
+          <option></option>
+          <option>Odbiór własny w siedzibie firmy w godz. 8-15 - 0 zł</option>
+          <option>Przesyłka pocztowa zwykła - 8 zł</option>
+          <option>Przesyłka kurierska - 14 zł</option>
+       </select>
+      </div>
+      <div class="totalCostValue">
+
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12"> 
       <label for="comments"><p>Twoje uwagi dot. zamówienia:</p></label>
       <textarea name="comments" class="form-control" rows="3" id="comments" maxlength="200" placeholder="Twoje uwagi - limit 200 znaków"></textarea>
     </div>
@@ -260,7 +367,7 @@ wybranej zewnętrznej aplikacji (np. www.wetransfer.com)
     
   
 
-    <button type="button" id="submit_form" onclick="submitFormNow()" class="btn btn-default teaser_button"><p class="text-center">Prześlij</p></button>
+    <button type="button" id="submit_form" onclick="submitFormNow()" class="btn btn-default teaser_button"><p class="text-center">Zamawiam</p></button>
   </div>
 </form>
 </div>

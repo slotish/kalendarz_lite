@@ -14,6 +14,7 @@ var months = [{name:'january', count:0},
 
  var monthCalculator = 0;
 	
+ var totalMoneyValueSum = 30;
 
  function addMonth(n){
 
@@ -117,18 +118,72 @@ $('.button_append').click(function(){
 $(document).on('change keyup mouseup', '#calendars_amount, #formatInput', function() {
 	count();
 })
+
+$(document).on('change keyup mouseup', '#inputShipping, #calendars_amount, #formatInput', function() {
+	countInTotal();
+})
+
  
  function count(){
  	var formatData = $('#formatInput').val();
 	var multiply = (formatData === "A3") ? 30 : 15;
 	var totalMoneyValue = $('#calendars_amount').val();
-	var totalMoneyValueSum = totalMoneyValue * multiply;
+	totalMoneyValueSum = totalMoneyValue * multiply;
 	$('#total_money_sum').empty();
-	$('#total_money_sum').append('Koszt twojego zamówienia to ' + totalMoneyValueSum + ' zł');
+	$('#total_money_sum').append('Koszt twojego zamówienia to ' + totalMoneyValueSum + ' zł - bez ceny wysyłki');
  }
+
+ function countInTotal(){
+ 	var shipingPayment;
+
+ 	if ($('#inputShipping').val() !== "") {
+ 		if ($('#inputShipping').val().length === 51){
+ 			shipingPayment = 0;
+ 		}else if ($('#inputShipping').val().length === 32) {
+ 			shipingPayment = 8;
+ 		}else if ($('#inputShipping').val().length === 27) {
+ 			shipingPayment = 14;
+ 		}
+
+ 	}
+ 	var totalCosts = shipingPayment + totalMoneyValueSum;
+ 	if ($('#inputShipping').val() === ""){
+ 		$('.totalCostValue').empty();
+ 	}else {
+	 	$('.totalCostValue').empty();
+		$('.totalCostValue').append('<p class="paddingForm">Całkowity koszt Twojego zamówienia razem z wysyłką to ' + totalCosts + ' zł.</p>' );
+	}
+
+ }
+
+	addPhoto(1);
+	addPhoto(2);
+	addPhoto(3);
+	addPhoto(4);
+	addPhoto(5);
+	addPhoto(6);
+	addPhoto(7);
+	addPhoto(8);
+	addPhoto(9);
+	addPhoto(10);
+	addPhoto(11);
+	addPhoto(12);
 
 })
 
+
+function addPhoto(n){
+
+		 $('#hiddenInput' + n).change(function(){
+		    $('.text_input' + n).val($(this).val());
+		  });
+
+		 $('#visibleInputButton' + n).click(function(){
+		    $('#hiddenInput' + n).click();
+		    return;
+		 });
+
+	}
 
 function submitFormNow(){
 	
@@ -159,6 +214,13 @@ function submitFormNow(){
 	var addressFlag = addressReg.test(addressVal);
 	var acceptTermsFlag = $('#accept_terms').is(':checked');
 	var acceptPersonalData = $('#accept_personal_data').is(':checked');
+	var shippingFlag = function(){
+		if ($('#inputShipping').val() !== ""){
+			return true;
+		}else {
+			return false;
+		}
+	};
 	var reCaptchaFlag ;
 	var response = grecaptcha.getResponse();
 	if(response.length == 0){
@@ -171,7 +233,7 @@ function submitFormNow(){
 
 
 	var validationArray = [emailFlag, phoneFlag, nameFlag, surnameFlag, cityFlag, streetFlag, postalCodeFlag, addressFlag,
-    acceptTermsFlag, acceptPersonalData, reCaptchaFlag];
+    acceptTermsFlag, acceptPersonalData, reCaptchaFlag, shippingFlag];
 
 
 	if (!phoneFlag){
@@ -222,6 +284,12 @@ function submitFormNow(){
 		$('#inputLocal').css('border', '1px solid #ccc');
 	}
 
+	if (!shippingFlag()){
+		$('#inputShipping').css('border', '2px solid red');
+	}else {
+		$('#inputShipping').css('border', '1px solid #ccc');
+	}
+
 	if (!acceptTermsFlag){
 		$('#accept_terms_alert').append('  Musisz zaakceptować regulamin!');
 		
@@ -253,13 +321,13 @@ function submitFormNow(){
 
 	console.log(addressFlag);
 
-	if (positiveFlagsCounter === 11){
+	if (positiveFlagsCounter === 12){
 		//console.log($("#registerForm"));
 		$("#registerForm").submit();	
 	} else {
 		alert("Uzupełnij arkusz aby przejśc dalej!")
 	}
 
-
+   console.log(shippingFlag);
 	
  }
