@@ -321,7 +321,7 @@ function submitFormNow(){
 
 	console.log(addressFlag);
 
-	if (positiveFlagsCounter === 12){
+	if ( positiveFlagsCounter === 12){
 		//console.log($("#registerForm"));
 		$("#registerForm").submit();	
 	} else {

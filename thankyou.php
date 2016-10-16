@@ -1,10 +1,15 @@
 <?php
+/******************************************
+*           Functions sectrion
+*******************************************/
+define("MAX_IMAGE_SIZE", 50000000); //bytes
 //Not implemented yet!
 function securityCheck($_str){
 	return $_str;
 }
 
-function orderMail($_data){
+function orderMail($_data, $_link){
+	$calendar_url_root = "http://www.drukarniarawicz.pl/kalendarz/";
 	$dictionary = array(
 		"template" => "Szablon",
 		"templatesNames" => array("Pierwszy", "Perłowy", "Przyjazny", "Łatwy", "Rawicki", "Inblue", "Pinky", "Melanż"),
@@ -59,6 +64,8 @@ function orderMail($_data){
 			$result .= "\t\t".$dictionary["monthsKeysPatrs"]["commentTranslation"].": ".$commentValue["comment"]."\n\n";
 		}
 	}
+	$result .= "Link do zdjęć(): ".$calendar_url_root.$_link."\n";
+	
 	$result .= "Dane zamawiającego:\n";
 	
 	foreach ($dictionary as $key => $value) {
@@ -69,10 +76,88 @@ function orderMail($_data){
 			$clientValue = $dictionary["templatesNames"][intval($clientValue)];
 		$result.= "\t".$value.": ".securityCheck($clientValue)."\n";
 	}
-	$result .= "\n\nTa wiadomość została wygenerowa automatycznie. Opisywanie na nią, nie kieruje widomości do klienta!\n";
+	$result .= "\n\nTa wiadomość została wygenerowa automatycznie. Odpisywanie na nią, nie kieruje widomości do klienta!\n";
 	
 	return $result;
 }
+
+function packImages($_files, $_path, &$errors){
+	$MAX_IMAGE_SIZE = 50000000;
+	$ALLOWED_FILE_EXTENSIONS = array("jpg", "png", "jpeg");
+	$monthsNames = array("Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień");
+	$errorTypes = array("MISSING_FILE" => "Brakuje pliku",
+						"FILE_IS_NOT_AN_IMAGE" => "Wybrany plik nie jest obrazem",
+						"WRONG_FORMAT" => "Wybrano niepoprawny format pliku. Obsługiwane formaty to ". implode(", ",$ALLOWED_FILE_EXTENSIONS),
+						"TOO_LARGE" => "Wybrany plik jest zbyt duży. Maksymalny rozmiar to ".($MAX_IMAGE_SIZE / (1024*1024))."MB");
+	$success = true;
+	$imagesArchivePath = $_path.'images.zip';
+	$zip = new ZipArchive;
+	if (!$zip->open($imagesArchivePath, ZIPARCHIVE::CREATE | ZIPARCHIVE::OVERWRITE)){
+		die('Internal server error. Please contact us at drukarniarawicz@gmail.com'.session_id());
+	}
+	for ($i = 0 ; $i < 12 ; $i++){
+		$errors[$i] = "";
+		$errorMsgPrefix = "Obraz dla miesiąca ".$monthsNames[$i]." jest niepoprawny. Przyczyna: ";
+		$uploadOk = 1;
+		$inputFile = $_files["file".$i];
+		if ($inputFile["name"] == ""){
+			$errors[$i] = $errorMsgPrefix.$errorTypes["MISSING_FILE"];
+			$success = false;
+			continue;
+		}
+		$imageFileType = pathinfo(basename($inputFile["name"]) ,PATHINFO_EXTENSION);
+		$file_new_path = "miesiac_".($i+1);
+		$target_file = $file_new_path.".".$imageFileType;
+		
+		$check = getimagesize($inputFile["tmp_name"]);
+		if($check === false) {
+			$errors[$i] = $errorMsgPrefix.$errorTypes["FILE_IS_NOT_AN_IMAGE"];
+			$success = false;
+			continue;
+		}
+		
+		$extensionOk = 0;
+		
+		foreach ($ALLOWED_FILE_EXTENSIONS as $ext){
+			if ($imageFileType == $ext){
+				$extensionOk = 1;
+			}
+		}
+		// Allow certain file formats
+		if($extensionOk == 0) {
+			$errors[$i] = $errorMsgPrefix.$errorTypes["WRONG_FORMAT"];
+			$success = false;
+			continue;
+		}
+		// Check file size
+		if ($inputFile["size"] > $MAX_IMAGE_SIZE) {
+			$errors[$i] = $errorMsgPrefix.$errorTypes["TOO_LARGE"];
+			$success = false;
+			continue;
+		}
+
+		$zip->addFile($inputFile["tmp_name"],$target_file);
+		
+	}
+	if ($success){
+		$zip->close();
+	} else {
+		$zip->unchangeAll();
+		return false;
+	}
+	
+	return $imagesArchivePath;
+}
+
+
+/******************************************
+*           Main sectrion
+*******************************************/
+
+
+
+session_start();
+
 $errorMsg = "<h2>No error message</h2>";
 
 if(isset($_POST['g-recaptcha-response'])){
@@ -88,11 +173,24 @@ if(!$captcha){
 	if(intval($responseKeys["success"]) !== 1) {
 		$errorMsg = '<h2>You are spammer ! Get the @$%K out</h2>';
 	} else {
-		$to = "drukarniarawicz@gmail.com";
-		$subject = "Zlecenie kalendarza";
-		$txt = orderMail($_POST);
-		$headers =  "From: klient@drukarniarawicz.pl" . "\r\n" ;
-		$result = mail($to,$subject,$txt, $headers);
+		//handle files
+		if (!file_exists("uploads/".session_id()) && !mkdir("uploads/".session_id())) {
+			die('Internal server error. Please contact us at drukarniarawicz@gmail.com'.session_id());
+		}
+		chmod("uploads/".session_id(), 0755);
+		$errors = array();
+		$link = packImages($_FILES, "uploads/".session_id()."/", $errors);
+		$hugeSuccess = true;
+		if ($link){
+			//prepare email with order
+			$to = "drukarniarawicz@gmail.com";
+			$subject = "Zlecenie kalendarza";
+			$txt = orderMail($_POST, $link);
+			$headers =  "From: klient@drukarniarawicz.pl" . "\r\n" ;
+			$result = mail($to,$subject,$txt, $headers);
+		} else {
+			$hugeSuccess = false;
+		}
 	}
 }
 ?>
@@ -149,12 +247,25 @@ if(!$captcha){
   </div>
 </div>
 <div class="container">
+<?php if ($hugeSuccess){ ?>
   <div class="col-lg-12 col-md-12 col-sm-12">
     <h1> Twoje zamowienie zostało przyjęte. Dziekujemy!</h1>
     <h2>
     W przeciagu 24 godzin otrzymasz od nas maila na adres: <div id="mail_sent"><?=$_POST["email"]?></div> z potwierdzeniem. Gdyby taka informacja do Ciebie nie dotarła - prosimy o kontakt.
     </h2>
   </div>
+<?php } else {?>
+  <div class="errorsContainer">
+  <h1> Przykro nam Twoje zamówienie nie zostało przyjęte.</h1>
+  <? foreach($errors as $err){
+	if ($err){
+		?>
+			<p class="errorMsg"><?=$err?></p>
+		<?
+	}
+  } ?>
+  </div>
+<?php }?>  
 </div>
 
 </body>

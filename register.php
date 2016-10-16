@@ -52,7 +52,7 @@
 
 
 
-<form id="registerForm" method="POST" action="thankyou.php">
+<form id="registerForm" method="POST" action="thankyou.php" enctype="multipart/form-data">
 	<input type="hidden" name="template" value="<?=intval($_GET["id"])?>"/>
 	<div class="container">
 	 <div class="row">
@@ -91,7 +91,7 @@
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input1 " disabled>
-          <input id="hiddenInput1"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput1"  name="file0" type="file" class="f input-large" />
        
 
        <p class="monthHeader">Luty</p>
@@ -99,7 +99,7 @@
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input2" disabled>
-          <input id="hiddenInput2"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput2"  name="file1" type="file" class="f input-large" />
        
 
        <p class="monthHeader">Marzec</p>
@@ -107,28 +107,28 @@
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input3" disabled>
-          <input id="hiddenInput3"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput3"  name="file2" type="file" class="f input-large" />
 
        <p class="monthHeader">Kwiecień</p>
            <a id="visibleInputButton4" class="btn btn-default visible_input">
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input4" disabled>
-          <input id="hiddenInput4"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput4"  name="file3" type="file" class="f input-large" />
 
        <p class="monthHeader">Maj</p>
            <a id="visibleInputButton5" class="btn btn-default visible_input">
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input5" disabled>
-          <input id="hiddenInput5"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput5"  name="file4" type="file" class="f input-large" />
 
        <p class="monthHeader">Czerwiec</p>
            <a id="visibleInputButton6" class="btn btn-default visible_input">
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input6" disabled>
-          <input id="hiddenInput6"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput6"  name="file5" type="file" class="f input-large" />
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6">
        <p class="monthHeader">Lipiec</p>
@@ -136,37 +136,37 @@
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input7" disabled>
-          <input id="hiddenInput7"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput7"  name="file6" type="file" class="f input-large" />
        <p class="monthHeader">Sierpień</p>
            <a id="visibleInputButton8" class="btn btn-default visible_input">
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input8" disabled>
-          <input id="hiddenInput8"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput8"  name="file7" type="file" class="f input-large" />
        <p class="monthHeader">Wrzesień</p>
            <a id="visibleInputButton9" class="btn btn-default visible_input">
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input9" disabled>
-          <input id="hiddenInput9"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput9"  name="file8" type="file" class="f input-large" />
        <p class="monthHeader">Październik</p>
            <a id="visibleInputButton10" class="btn btn-default visible_input">
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input10" disabled>
-          <input id="hiddenInput10"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput10"  name="file9" type="file" class="f input-large" />
        <p class="monthHeader">Listopad</p>
            <a id="visibleInputButton11" class="btn btn-default visible_input">
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input11" disabled>
-          <input id="hiddenInput11"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput11"  name="file10" type="file" class="f input-large" />
        <p class="monthHeader">Grudzień</p>
            <a id="visibleInputButton12" class="btn btn-default visible_input">
             <p class="input_txt">Dodaj zdjęcie</p>
           </a>     
           <input type="text" id="subfile" class="input-sm text_input12" disabled>
-          <input id="hiddenInput12"  name="file" type="file" class="f input-large" />
+          <input id="hiddenInput12"  name="file11" type="file" class="f input-large" />
     </div>
   </div>
 
