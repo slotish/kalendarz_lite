@@ -233,7 +233,7 @@ function submitFormNow(){
 
 
 	var validationArray = [emailFlag, phoneFlag, nameFlag, surnameFlag, cityFlag, streetFlag, postalCodeFlag, addressFlag,
-    acceptTermsFlag, acceptPersonalData, reCaptchaFlag, shippingFlag];
+    acceptTermsFlag, acceptPersonalData, shippingFlag];
 
 
 	if (!phoneFlag){

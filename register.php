@@ -335,11 +335,13 @@
       <label for="comments"><p>Twoje uwagi dot. zamówienia:</p></label>
       <textarea name="comments" class="form-control" rows="3" id="comments" maxlength="200" placeholder="Twoje uwagi - limit 200 znaków"></textarea>
     </div>
+    <!--
      <div class="col-lg-12 col-md-12 col-sm-12"> 
       <p>Zabezpieczenie anty-spamowe:*</p>
       <div class="g-recaptcha" data-sitekey="6LfrrQcUAAAAAFMqCkuZacpK7roGYvlOD1cCL2gB"></div>
       <p id="re_captcha_alert"></p>
     </div>
+    -->
     <div class="col-lg-12 col-md-12 col-sm-12"> 
       <div class="checkbox">
         <label>
