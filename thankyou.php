@@ -160,6 +160,7 @@ session_start();
 
 $errorMsg = "<h2>No error message</h2>";
 
+/*
 if(isset($_POST['g-recaptcha-response'])){
   $captcha=$_POST['g-recaptcha-response'];
 }
@@ -193,6 +194,8 @@ if(!$captcha){
 		}
 	}
 }
+
+*/
 ?>
 
 <!DOCTYPE html>

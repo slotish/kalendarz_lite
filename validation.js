@@ -221,13 +221,13 @@ function submitFormNow(){
 			return false;
 		}
 	};
-	var reCaptchaFlag ;
-	var response = grecaptcha.getResponse();
-	if(response.length == 0){
-		reCaptchaFlag = false
-	}else {
-		reCaptchaFlag = true;
-	}
+	//var reCaptchaFlag ;
+	//var response = grecaptcha.getResponse();
+	//if(response.length == 0){
+	//	reCaptchaFlag = false
+	//}else {
+	//	reCaptchaFlag = true;
+	//}
     
 
 
@@ -303,7 +303,7 @@ function submitFormNow(){
 	}else {
 		$('#accept_personal_data_alert').empty();
 	}
-
+/*
 	if (!reCaptchaFlag){
 		$('#re_captcha_alert').append('Musisz wypełnić recaptche');
 		
@@ -311,7 +311,7 @@ function submitFormNow(){
 		$('#re_captcha_alert').empty();
 	}
 
-
+*/
 	var positiveFlagsCounter = 0;
 	for (var i = 0; i <= validationArray.length; i++){
 		if (validationArray[i]){
