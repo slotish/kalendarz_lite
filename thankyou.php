@@ -93,7 +93,7 @@ function packImages($_files, $_path, &$errors){
 	$imagesArchivePath = $_path.'images.zip';
 	$zip = new ZipArchive;
 	if (!$zip->open($imagesArchivePath, ZIPARCHIVE::CREATE | ZIPARCHIVE::OVERWRITE)){
-		die('Internal server error. Please contact us at drukarniarawicz@gmail.com'.session_id());
+		die('Internal server error. Please contact us at drukarniarawicz@gmail.com');
 	}
 	for ($i = 0 ; $i < 12 ; $i++){
 		$errors[$i] = "";
@@ -150,52 +150,52 @@ function packImages($_files, $_path, &$errors){
 }
 
 
+function getNewUserID(){
+	$result = 0;
+	while(true){
+		$result = rand();
+		if (!file_exists("uploads/".$result)){
+			return $result;
+		}
+	}
+}
+
 /******************************************
 *           Main sectrion
 *******************************************/
 
 
-
 session_start();
-
+$_SESSION["captchaFood"] = true;
 $errorMsg = "<h2>No error message</h2>";
+$userID = getNewUserID();
+$errors = array();
 
-/*
-if(isset($_POST['g-recaptcha-response'])){
-  $captcha=$_POST['g-recaptcha-response'];
-}
-if(!$captcha){
+if(!isset($_SESSION["captchaFood"]) || !$_SESSION["captchaFood"]){
 	$errorMsg = '<h2>Please check the the captcha form.</h2>';
 } else {
-	$secretKey = "6LfrrQcUAAAAAGahPCGFDfnl5KK6tPN_tElJU9E5";
-	$ip = $_SERVER['REMOTE_ADDR'];
-	$response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
-	$responseKeys = json_decode($response,true);
-	if(intval($responseKeys["success"]) !== 1) {
-		$errorMsg = '<h2>You are spammer ! Get the @$%K out</h2>';
+	$_SESSION["captchaFood"] = false;
+	//handle files
+	if (!file_exists("uploads/".$userID) && !mkdir("uploads/".$userID)) {
+		die('Internal server error. Please contact us at drukarniarawicz@gmail.com'.$userID);
+	}
+	chmod("uploads/".$userID, 0755);
+	
+	$link = packImages($_FILES, "uploads/".$userID."/", $errors);
+	$hugeSuccess = true;
+	
+	if ($link){
+		//prepare email with order
+		$to = "drukarniarawicz@gmail.com";
+		$subject = "Zlecenie kalendarza";
+		$txt = orderMail($_POST, $link);
+		$headers =  "From: klient@drukarniarawicz.pl" . "\r\n" ;
+		$result = mail($to,$subject,$txt, $headers);
 	} else {
-		//handle files
-		if (!file_exists("uploads/".session_id()) && !mkdir("uploads/".session_id())) {
-			die('Internal server error. Please contact us at drukarniarawicz@gmail.com'.session_id());
-		}
-		chmod("uploads/".session_id(), 0755);
-		$errors = array();
-		$link = packImages($_FILES, "uploads/".session_id()."/", $errors);
-		$hugeSuccess = true;
-		if ($link){
-			//prepare email with order
-			$to = "drukarniarawicz@gmail.com";
-			$subject = "Zlecenie kalendarza";
-			$txt = orderMail($_POST, $link);
-			$headers =  "From: klient@drukarniarawicz.pl" . "\r\n" ;
-			$result = mail($to,$subject,$txt, $headers);
-		} else {
-			$hugeSuccess = false;
-		}
+		$hugeSuccess = false;
 	}
 }
 
-*/
 ?>
 
 <!DOCTYPE html>
